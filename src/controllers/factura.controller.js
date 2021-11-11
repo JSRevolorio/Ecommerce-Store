@@ -16,6 +16,8 @@ export default () => {
 
     var Factura = JSON.parse(String(window.localStorage.getItem('ProductoFacturacion')));
 
+    //console.log(Factura);
+
     var formulario = Element.querySelector('#formFacturaCompraCompra');
    
     formulario['serie'].value = Factura.serie;
