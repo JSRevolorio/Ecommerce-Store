@@ -159,6 +159,8 @@ export default () => {
         Element.querySelector('#idNumeroFact').value = guid;
         Element.querySelector('#idFechaFactura').value = fechaFormat;
         Element.querySelector('#idTotalFactura').value = TotalVenta;
+
+        console.log(productos);
     });
 
 
@@ -192,7 +194,6 @@ export default () => {
             cliente.facturaDetalles.push(product)
         });
 
-        console.log(cliente);
         var factura = await createFactura(cliente);
 
 
@@ -216,17 +217,14 @@ export default () => {
             var product = {
                 idProducto: producto.id,
                 nombreProducto: producto.nombre,
-                precio: producto.precioSinIva,
+                precio: producto.precioConIva,
                 cantidad: producto.CantidaProducto
             }
 
-
-            clienteFactura.productos.push(product)
+            clienteFactura.productos.push(product);
         });
 
         var clienteEnviado = await emailFactura(clienteFactura);
-
-        console.log(clienteEnviado);
 
         window.localStorage.setItem('ProductoFacturacion', JSON.stringify(clienteFactura));
 
