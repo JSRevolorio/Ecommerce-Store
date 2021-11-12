@@ -140,13 +140,13 @@ export default () => {
         form['Direccion'].value = cliente.direccion;
 
 
-        if(metodo.value == 5)
+        if(metodo.value == 1)
         {
-            metodoPago.id = 5;
+            metodoPago.id = 1;
             metodoPago.metodo = "Deposito";
 
-        }else if(metodo.value == 1) {
-            metodoPago.id = 1;
+        }else if(metodo.value == 2) {
+            metodoPago.id = 2;
             metodoPago.metodo = "Efectivo";
 
         }else if(metodo.value == 3){
